@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">FindIT</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="logo_description">Find IT logo</string>
+    <string name="welcome">Welcome</string>
+    <string name="welcome_text">Welcome</string>
+    <string name="email_prompt">Enter Email</string>
+    <string name="password_prompt">Enter Password</string>
+    <string name="confirm_password_prompt">Confirm Password</string>
+    <string name="action_register">Register</string>
+    <string name="register_banner">Create a new account</string>
+    <string name="login_banner">Login to your account</string>
+    <string name="login_prompt">Already have an account? Login</string>
+    <string name="register_prompt">Don\'t have an account? Register</string>
+    <string name="action_login">Login</string>
+    <string name="action_logout">Logout</string>
 </resources>
