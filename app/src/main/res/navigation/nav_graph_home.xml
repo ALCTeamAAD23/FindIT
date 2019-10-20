@@ -9,6 +9,27 @@
         android:id="@+id/itemsFragment"
         android:name="com.example.findit.ItemsFragment"
         android:label="@string/app_name"
-        tools:layout="@layout/fragment_items" />
+        tools:layout="@layout/fragment_items" >
+        <action
+            android:id="@+id/action_itemsFragment_to_itemCreateFragment"
+            app:destination="@id/itemCreateFragment" />
+        <action
+            android:id="@+id/action_itemsFragment_to_itemDetailsFragment"
+            app:destination="@id/itemDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemCreateFragment"
+        android:name="com.example.findit.ItemCreateFragment"
+        android:label="Add Lost Item"
+        tools:layout="@layout/fragment_item_create" />
+    <fragment
+        android:id="@+id/itemDetailsFragment"
+        android:name="com.example.findit.ItemDetailsFragment"
+        android:label="fragment_item_details"
+        tools:layout="@layout/fragment_item_details" >
+        <argument
+            android:name="item"
+            app:argType="com.example.findit.models.Item" />
+    </fragment>
 
 </navigation>
