@@ -18,4 +18,12 @@
     <string name="action_logout">Logout</string>
     <string name="lost_items">Lost Items</string>
     <string name="found_items">Found Items</string>
+    <string name="last_seen_text">Last Seen:</string>
+    <string name="action_save">Save</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="title_prompt">Enter Title</string>
+    <string name="description_prompt">Enter Description</string>
+    <string name="place_prompt">Place Last Seen</string>
+    <string name="date_prompt">Date Last Seen</string>
+    <string name="reward_prompt">Reward</string>
 </resources>

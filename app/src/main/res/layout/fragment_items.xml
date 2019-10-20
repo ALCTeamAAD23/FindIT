@@ -55,15 +55,17 @@
             </com.google.android.material.button.MaterialButtonToggleGroup>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/shopping_list"
+                android:id="@+id/item_list"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginTop="8dp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:spanCount="2"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/toggle_button_group" />
+                app:layout_constraintTop_toBottomOf="@+id/toggle_button_group"
+                tools:listitem="@layout/list_item_lost"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

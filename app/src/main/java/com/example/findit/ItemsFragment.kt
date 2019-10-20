@@ -3,18 +3,20 @@ package com.example.findit
 
 import android.os.Bundle
 import android.view.*
-import androidx.fragment.app.Fragment
+import android.view.animation.OvershootInterpolator
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.NavController
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.findit.adapters.ItemAdapter
 import com.example.findit.databinding.FragmentItemsBinding
+import com.example.findit.models.Item
 import com.example.findit.viewmodels.LoginViewModel
+import jp.wasabeef.recyclerview.animators.SlideInUpAnimator
 
 /**
- * A simple [Fragment] subclass.
+ * Lost and found items
  */
 class ItemsFragment : Fragment() {
 
@@ -31,6 +33,27 @@ class ItemsFragment : Fragment() {
         activity.setSupportActionBar(binding.toolbar)
         activity.setupActionBarWithNavController(navController)
 
+        val adapter = ItemAdapter()
+
+        // Add the Animator to the recyclerview
+        // TODO: Needs to be reviewed as it seems not to work
+        binding.itemList.itemAnimator = SlideInUpAnimator(OvershootInterpolator(1f))
+        binding.itemList.adapter = adapter
+
+        // Dummy data to add to the adapter to showcase
+        val items = mutableListOf<Item>()
+        for (i in 1..30) {
+            val item = Item("$i", "Title $i", "Description $i", "Location $i", "Date $i", "USD $i", "https://dummyimage.com/600x400&text=Lost $i", "owner")
+            items.add(item)
+        }
+        adapter.submitList(items)
+
+        // Open the fragment to add more lost and found items
+        binding.fab.setOnClickListener {
+            navController.navigate(R.id.action_itemsFragment_to_itemCreateFragment)
+        }
+
+        // Need to show the menu item
         setHasOptionsMenu(true)
 
         return binding.root
