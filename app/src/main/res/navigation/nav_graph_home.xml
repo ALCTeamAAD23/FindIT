@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_home"
+    app:startDestination="@id/itemsFragment">
+
+    <fragment
+        android:id="@+id/itemsFragment"
+        android:name="com.example.findit.ItemsFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_items" >
+        <action
+            android:id="@+id/action_itemsFragment_to_itemCreateFragment"
+            app:destination="@id/itemCreateFragment"
+            app:enterAnim="@anim/slide_in_down"
+            app:exitAnim="@anim/slide_out_up"
+            app:popEnterAnim="@anim/slide_in_up"
+            app:popExitAnim="@anim/slide_out_down" />
+        <action
+            android:id="@+id/action_itemsFragment_to_itemDetailsFragment"
+            app:destination="@id/itemDetailsFragment"
+            app:enterAnim="@anim/slide_in_down"
+            app:exitAnim="@anim/slide_out_up"
+            app:popEnterAnim="@anim/slide_in_up"
+            app:popExitAnim="@anim/slide_out_down" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemCreateFragment"
+        android:name="com.example.findit.ItemCreateFragment"
+        android:label="Add Lost Item"
+        tools:layout="@layout/fragment_item_create" >
+        <argument
+            android:name="lost"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemDetailsFragment"
+        android:name="com.example.findit.ItemDetailsFragment"
+        android:label="fragment_item_details"
+        tools:layout="@layout/fragment_item_details" >
+        <argument
+            android:name="item"
+            app:argType="com.example.findit.models.Item" />
+    </fragment>
+
+</navigation>
