@@ -12,16 +12,28 @@
         tools:layout="@layout/fragment_items" >
         <action
             android:id="@+id/action_itemsFragment_to_itemCreateFragment"
-            app:destination="@id/itemCreateFragment" />
+            app:destination="@id/itemCreateFragment"
+            app:enterAnim="@anim/slide_in_down"
+            app:exitAnim="@anim/slide_out_up"
+            app:popEnterAnim="@anim/slide_in_up"
+            app:popExitAnim="@anim/slide_out_down" />
         <action
             android:id="@+id/action_itemsFragment_to_itemDetailsFragment"
-            app:destination="@id/itemDetailsFragment" />
+            app:destination="@id/itemDetailsFragment"
+            app:enterAnim="@anim/slide_in_down"
+            app:exitAnim="@anim/slide_out_up"
+            app:popEnterAnim="@anim/slide_in_up"
+            app:popExitAnim="@anim/slide_out_down" />
     </fragment>
     <fragment
         android:id="@+id/itemCreateFragment"
         android:name="com.example.findit.ItemCreateFragment"
         android:label="Add Lost Item"
-        tools:layout="@layout/fragment_item_create" />
+        tools:layout="@layout/fragment_item_create" >
+        <argument
+            android:name="lost"
+            app:argType="boolean" />
+    </fragment>
     <fragment
         android:id="@+id/itemDetailsFragment"
         android:name="com.example.findit.ItemDetailsFragment"

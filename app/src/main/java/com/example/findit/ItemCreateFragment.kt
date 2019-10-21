@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.findit.databinding.FragmentItemCreateBinding
 
@@ -16,7 +17,9 @@ import com.example.findit.databinding.FragmentItemCreateBinding
  */
 class ItemCreateFragment : Fragment() {
 
+    private val args: ItemCreateFragmentArgs by navArgs()
     private lateinit var navController: NavController
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val binding = FragmentItemCreateBinding.inflate(inflater, container, false)
@@ -29,6 +32,7 @@ class ItemCreateFragment : Fragment() {
         activity.setupActionBarWithNavController(navController)
         activity.supportActionBar?.setDisplayHomeAsUpEnabled(true)
         activity.supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_close)
+        activity.supportActionBar?.title = if (args.lost) "Add Lost Item" else "Add Found Item"
 
         setHasOptionsMenu(true)
 

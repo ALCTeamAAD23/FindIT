@@ -48,7 +48,9 @@ class ItemsFragment : Fragment() {
 
         // Open the fragment to add more lost and found items
         binding.fab.setOnClickListener {
-            navController.navigate(R.id.action_itemsFragment_to_itemCreateFragment)
+            val isLost = binding.toggleButtonGroup.checkedButtonId == R.id.lost_button
+            val direction = ItemsFragmentDirections.actionItemsFragmentToItemCreateFragment(isLost)
+            navController.navigate(direction)
         }
 
         binding.toggleButtonGroup.addOnButtonCheckedListener { _, checkedId, isChecked ->
